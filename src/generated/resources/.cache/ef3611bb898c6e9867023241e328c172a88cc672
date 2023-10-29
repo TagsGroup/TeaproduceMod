@@ -1,6 +1,8 @@
-// 1.19.4	2023-10-29T12:25:51.5776709	Item Models: teaproduce
+// 1.19.4	2023-10-29T16:15:15.9431793	Item Models: teaproduce
 1e49418dc7ccd2060537c363e29717103382eb22 assets/teaproduce/models/item/boxed_green_tea_leaves.json
 10b0a02b16d4db05760777b739c548df5c785cca assets/teaproduce/models/item/green_tea_leaf.json
+abf038f71450d148f7a3e87244c658d71f420b7b assets/teaproduce/models/item/magic_purple_ingot.json
+3231d6d6458a5951f0a376f447cec0e3342b09d2 assets/teaproduce/models/item/magic_purple_nugget.json
 a2b4127322aa1f9b501f3eb424af7ed66f5e6bcd assets/teaproduce/models/item/magic_purple_ore.json
 4d8f00a7ac3854a7e558a5e2505f6e71095c887f assets/teaproduce/models/item/magic_tea_barrel.json
 9c27fab3794301915fa92c890dcae0abc5ab50e9 assets/teaproduce/models/item/magic_tea_charge.json

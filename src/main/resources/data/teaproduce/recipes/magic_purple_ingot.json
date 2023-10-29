@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "0": {
-      "tag": "forge:tea_leaves/green"
+      "item": "teaproduce:magic_purple_nugget"
     }
   },
   "pattern": [
@@ -11,6 +11,6 @@
     "000"
   ],
   "result": {
-    "item": "teaproduce:boxed_green_tea_leaves"
+    "item": "teaproduce:magic_purple_ingot"
   }
 }

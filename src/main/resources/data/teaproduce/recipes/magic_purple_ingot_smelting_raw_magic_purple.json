@@ -3,7 +3,7 @@
   "cookingtime": 500,
   "experience": 0.5,
   "ingredient": {
-    "item": "teaproduce:boxed_green_tea_leaves"
+    "item": "teaproduce:raw_magic_purple"
   },
-  "result": "minecraft:golden_apple"
+  "result": "teaproduce:magic_purple_ingot"
 }

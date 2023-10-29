@@ -53,4 +53,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGIC_TEA_BARREL = registryBlockItem("magic_tea_barrel", () -> new BlockItem(BlockRegistry.MAGIC_TEA_BARREL.get(), new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_PURPLE_ORE = registryBlockItem("magic_purple_ore", () -> new BlockItem(BlockRegistry.MAGIC_PURPLE_ORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> RAW_MAGIC_PURPLE = registrySimpleItem("raw_magic_purple", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_INGOT = registrySimpleItem("magic_purple_ingot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_NUGGET = registrySimpleItem("magic_purple_nugget", () -> new Item(new Item.Properties()));
 }
