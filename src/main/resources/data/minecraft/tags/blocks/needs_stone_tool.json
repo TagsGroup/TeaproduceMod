@@ -1,5 +1,7 @@
 {
   "values": [
-    "teaproduce:magic_purple_ore"
+    "teaproduce:magic_purple_ore",
+    "teaproduce:magic_purple_block",
+    "teaproduce:deepslate_magic_purple_ore"
   ]
 }

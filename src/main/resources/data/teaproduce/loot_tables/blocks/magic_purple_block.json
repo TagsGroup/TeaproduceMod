@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "teaproduce:magic_purple_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

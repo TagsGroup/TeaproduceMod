@@ -22,6 +22,7 @@ public class DataGen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         gen.addProvider(true, new ItemModelDataProvider(output, helper));
+        gen.addProvider(true, new BlockStateDataProvider(output, helper));
         gen.addProvider(event.includeServer(), new WorldGenProvider(output, lookupProvider));
     }
 }

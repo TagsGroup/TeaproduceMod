@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "0": {
+      "item": "teaproduce:magic_purple_ingot"
+    }
+  },
+  "pattern": [
+    "000",
+    "000",
+    "000"
+  ],
+  "result": {
+    "item": "teaproduce:magic_purple_block"
+  }
+}
