@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "_": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "0": {
+      "tag": "forge:tea_leaves/green"
+    }
+  },
+  "pattern": [
+    "_0_",
+    "/0/",
+    "___"
+  ],
+  "result": {
+    "item": "teaproduce:boxed_green_tea_leaves"
+  }
+}

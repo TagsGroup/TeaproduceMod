@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 500,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "teaproduce:boxed_green_tea_leaves"
+  },
+  "result": "minecraft:golden_apple"
+}

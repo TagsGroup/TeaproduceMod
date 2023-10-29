@@ -1,0 +1,12 @@
+{
+  "item.teaproduce.green_tea_leaf": "绿茶叶",
+  "item.teaproduce.magic_tea_wand": "魔法茶杖",
+  "item.teaproduce.magic_tea_charge": "魔法火球",
+  "block.teaproduce.boxed_green_tea_leaves": "箱装绿茶叶",
+  "block.teaproduce.magic_tea_barrel": "魔法茶桶",
+  "itemGroup.teaproduce_tab": "茶艺",
+  "enchantment.teaproduce.flying": "飞天",
+  "enchantment.teaproduce.falling_thunder": "落雷",
+  "chat.teaproduce.teleport_successfully": "成功传送至 (%1$s, %2$s, %3$s)！",
+  "chat.teaproduce.teleport_unsuccessfully": "由于你从未死亡，所以传送失败。"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "teaproduce:block/box_bottom",
+    "side": "teaproduce:block/boxed_green_tea_leaves_side",
+    "top": "teaproduce:block/boxed_green_tea_leaves_top"
+  }
+}

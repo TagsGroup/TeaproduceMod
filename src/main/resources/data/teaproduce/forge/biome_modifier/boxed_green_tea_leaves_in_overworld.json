@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_plains",
+  "features": "teaproduce:boxed_green_tea_leaves_placed",
+  "step": "underground_ores"
+}

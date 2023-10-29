@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "[": {
+      "item": "minecraft:barrel"
+    },
+    "/": {
+      "tag": "teaproduce:boxed_green_tea_leaves"
+    },
+    "0": {
+      "tag": "forge:tea_leaves/green"
+    }
+  },
+  "pattern": [
+    "000",
+    "0[0",
+    "0/0"
+  ],
+  "result": {
+    "item": "teaproduce:boxed_green_tea_leaves"
+  }
+}

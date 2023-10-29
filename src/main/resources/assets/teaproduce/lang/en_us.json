@@ -1,0 +1,12 @@
+{
+  "item.teaproduce.green_tea_leaf" : "Green Tea",
+  "item.teaproduce.magic_tea_wand" : "Magic Tea Wand",
+  "item.teaproduce.magic_tea_charge": "Magic Tea Charge",
+  "block.teaproduce.boxed_green_tea_leaves" : "Green Tea Leaves Crate",
+  "block.teaproduce.magic_tea_barrel": "Magic Tea Barrel",
+  "itemGroup.teaproduce_tab": "Tea Produce",
+  "enchantment.teaproduce.flying": "Flying",
+  "enchantment.teaproduce.falling_thunder": "Falling Thunder",
+  "chat.teaproduce.teleport_successfully": "Teleport to (%1$s, %2$s, %3$s) Succesfully!",
+  "chat.teaproduce.teleport_unsuccessfully": "Teleport Unsuccessfully Because You Never Died Before!"
+}
