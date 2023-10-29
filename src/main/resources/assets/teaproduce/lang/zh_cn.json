@@ -1,9 +1,10 @@
 {
   "item.teaproduce.green_tea_leaf": "绿茶叶",
   "item.teaproduce.magic_tea_wand": "魔法茶杖",
-  "item.teaproduce.magic_tea_charge": "魔法火球",
+  "item.teaproduce.magic_tea_charge": "魔法弹",
   "block.teaproduce.boxed_green_tea_leaves": "箱装绿茶叶",
   "block.teaproduce.magic_tea_barrel": "魔法茶桶",
+  "block.teaproduce.magic_purple_ore": "魔法紫矿",
   "itemGroup.teaproduce_tab": "茶艺",
   "enchantment.teaproduce.flying": "飞天",
   "enchantment.teaproduce.falling_thunder": "落雷",

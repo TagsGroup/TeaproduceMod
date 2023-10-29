@@ -51,6 +51,6 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGIC_TEA_WAND = registryHandheldItem("magic_tea_wand", () -> new MagicTeaWand(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> BOXED_GREEN_TEA_LEAVES = registryBlockItem("boxed_green_tea_leaves", () -> new BlockItem(BlockRegistry.BOXED_GREEN_TEA_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_TEA_BARREL = registryBlockItem("magic_tea_barrel", () -> new BlockItem(BlockRegistry.MAGIC_TEA_BARREL.get(), new Item.Properties()));
-
     public static final RegistryObject<Item> MAGIC_PURPLE_ORE = registryBlockItem("magic_purple_ore", () -> new BlockItem(BlockRegistry.MAGIC_PURPLE_ORE.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RAW_MAGIC_PURPLE = registrySimpleItem("raw_magic_purple", () -> new Item(new Item.Properties()));
 }

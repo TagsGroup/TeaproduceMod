@@ -14,5 +14,5 @@ public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     public static final RegistryObject<Block> BOXED_GREEN_TEA_LEAVES = BLOCKS.register("boxed_green_tea_leaves", () -> new Block(BlockBehaviour.Properties.copy(Blocks.HAY_BLOCK)));
     public static final RegistryObject<Block> MAGIC_TEA_BARREL = BLOCKS.register("magic_tea_barrel", () -> new MagicTeaBarrel(BlockBehaviour.Properties.copy(Blocks.BARREL)));
-    public static final RegistryObject<Block> MAGIC_PURPLE_ORE = BLOCKS.register("magic_purple_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+    public static final RegistryObject<Block> MAGIC_PURPLE_ORE = BLOCKS.register("magic_purple_ore", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
 }
