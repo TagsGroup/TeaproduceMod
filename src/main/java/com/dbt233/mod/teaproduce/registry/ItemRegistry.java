@@ -5,10 +5,7 @@ import com.dbt233.mod.teaproduce.items.MagicTeaWand;
 import com.dbt233.mod.teaproduce.registry.property.FoodProperty;
 import com.dbt233.mod.teaproduce.registry.property.TierProperty;
 import com.google.common.collect.Sets;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -61,4 +58,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGIC_PURPLE_BLOCK = registryItem("magic_purple_block", () -> new BlockItem(BlockRegistry.MAGIC_PURPLE_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> DEEPSLATE_MAGIC_PURPLE_ORE = registryItem("deepslate_magic_purple_ore", () -> new BlockItem(BlockRegistry.DEEPSLATE_MAGIC_PURPLE_ORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_PURPLE_SWORD = registryHandheldItem("magic_purple_sword", () -> new SwordItem(TierProperty.MAGIC_PURPLE, 3 /*攻击伤害基础*/, -2.4f/*攻击速度加成*/, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_AXE = registryHandheldItem("magic_purple_axe", () -> new AxeItem(TierProperty.MAGIC_PURPLE, 6f, -3.1f, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_SHOVEL = registryHandheldItem("magic_purple_shovel", () -> new ShovelItem(TierProperty.MAGIC_PURPLE, 1.5f, -3.0f, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_HOE = registryHandheldItem("magic_purple_hoe", () -> new HoeItem(TierProperty.MAGIC_PURPLE, -2, -1f, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_PICKAXE = registryHandheldItem("magic_purple_pickaxe", () -> new PickaxeItem(TierProperty.MAGIC_PURPLE, 1, -2.8f, new Item.Properties()));
+
 }

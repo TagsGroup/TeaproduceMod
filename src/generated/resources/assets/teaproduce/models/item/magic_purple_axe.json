@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "teaproduce:item/magic_purple_axe"
+  }
+}

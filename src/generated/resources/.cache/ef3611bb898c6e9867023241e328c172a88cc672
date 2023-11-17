@@ -1,8 +1,12 @@
-// 1.19.4	2023-10-29T19:40:40.1578603	Item Models: teaproduce
+// 1.19.4	2023-10-29T20:00:32.9315436	Item Models: teaproduce
 1e49418dc7ccd2060537c363e29717103382eb22 assets/teaproduce/models/item/boxed_green_tea_leaves.json
 10b0a02b16d4db05760777b739c548df5c785cca assets/teaproduce/models/item/green_tea_leaf.json
+eefac928b1120be8f0bdf44ad541269d17e28872 assets/teaproduce/models/item/magic_purple_axe.json
+29a53e0c2b4ac3e0fc9c93094e7bcdf94e6b7457 assets/teaproduce/models/item/magic_purple_hoe.json
 abf038f71450d148f7a3e87244c658d71f420b7b assets/teaproduce/models/item/magic_purple_ingot.json
 3231d6d6458a5951f0a376f447cec0e3342b09d2 assets/teaproduce/models/item/magic_purple_nugget.json
+70e1a70977ea0aea100d072bf83016c493427fc3 assets/teaproduce/models/item/magic_purple_pickaxe.json
+ca346c0cccce568eab52cc30956513b8a101a5be assets/teaproduce/models/item/magic_purple_shovel.json
 35f96352a7a36ecbd73c76334206e7f4f97e20d7 assets/teaproduce/models/item/magic_purple_sword.json
 4d8f00a7ac3854a7e558a5e2505f6e71095c887f assets/teaproduce/models/item/magic_tea_barrel.json
 9c27fab3794301915fa92c890dcae0abc5ab50e9 assets/teaproduce/models/item/magic_tea_charge.json
