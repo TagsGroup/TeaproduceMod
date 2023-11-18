@@ -1,6 +1,5 @@
 package com.dbt233.mod.teaproduce.datagen;
 
-import com.dbt233.mod.teaproduce.registry.BlockRegistry;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;

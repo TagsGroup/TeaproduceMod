@@ -2,7 +2,6 @@ package com.dbt233.mod.teaproduce.registry;
 
 import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
 import com.google.common.collect.Sets;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;

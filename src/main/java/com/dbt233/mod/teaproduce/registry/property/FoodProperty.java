@@ -1,7 +1,5 @@
 package com.dbt233.mod.teaproduce.registry.property;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class FoodProperty {
