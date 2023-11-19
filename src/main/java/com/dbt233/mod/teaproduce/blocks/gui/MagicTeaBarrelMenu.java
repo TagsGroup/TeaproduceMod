@@ -1,5 +1,6 @@
 package com.dbt233.mod.teaproduce.blocks.gui;
 
+import com.dbt233.mod.teaproduce.blocks.screen.MagicTeaBarrelScreen;
 import com.dbt233.mod.teaproduce.registry.ModMenuTypeRegistry;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -17,8 +18,9 @@ public class MagicTeaBarrelMenu extends AbstractContainerMenu {
     public static final int PLAYER_ROWS = 3;
     public static final int SLOT_A = 18;
     public static final int SIZE = CON_ROWS * CON_ROWS;
-    public static final int xSize = COLS * SLOT_A + 10;
-    public static final int ySize = (CON_ROWS + PLAYER_ROWS + 1 /*Hotbar Row*/) * SLOT_A + 20;
+    public static final int xSize = MagicTeaBarrelScreen.textureXSize;
+    public static final int ySize = MagicTeaBarrelScreen.textureYSize;
+
     public Container getContainer() {
         return this.container;
     }

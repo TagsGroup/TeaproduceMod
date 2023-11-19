@@ -14,7 +14,9 @@ import org.jetbrains.annotations.NotNull;
 import static com.dbt233.mod.teaproduce.Utils.MODID;
 
 public class MagicTeaBarrelScreen extends AbstractContainerScreen<MagicTeaBarrelMenu> implements MenuAccess<MagicTeaBarrelMenu> {
-    private final ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/gui/container/magic_tea_barrel");
+    private final ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/gui/magic_tea_barrel.png");
+    public static final int textureXSize = 176;
+    public static final int textureYSize = 276;
 
     public MagicTeaBarrelScreen(MagicTeaBarrelMenu p_97741_, Inventory p_97742_, Component p_97743_) {
         super(p_97741_, p_97742_, p_97743_);
@@ -34,7 +36,7 @@ public class MagicTeaBarrelScreen extends AbstractContainerScreen<MagicTeaBarrel
     protected void renderLabels(@NotNull PoseStack matrixStack, int mouseX, int mouseY) {
 //        super.renderLabels(matrixStack, mouseX, mouseY);
         this.font.draw(matrixStack, this.title, 8.0f, 6.0f, 4210752);
-        this.font.draw(matrixStack, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 4 * 18), 4210752);
+        this.font.draw(matrixStack, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 5 * 18 - 4), 4210752);
     }
 
     @Override
@@ -46,9 +48,8 @@ public class MagicTeaBarrelScreen extends AbstractContainerScreen<MagicTeaBarrel
         int x = (this.width - this.imageWidth) / 2;
         int y = (this.height - this.imageHeight) / 2;
 
-        int textureYSize = 258;
-        int textureXSize = 176;
-        blit(poseStack, x, y, this.imageWidth, this.imageHeight, textureXSize, textureYSize);
+
+        blit(poseStack, x, y, 0, 0, this.imageWidth, this.imageHeight, this.textureXSize, this.textureYSize);
 
     }
 }
