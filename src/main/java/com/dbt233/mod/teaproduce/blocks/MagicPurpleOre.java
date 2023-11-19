@@ -27,8 +27,7 @@ public class MagicPurpleOre extends Block {
             Player player, InteractionHand interactionHand, BlockHitResult result) {
         float playerHealth = player.getHealth();
         float playerMaxHealth = player.getMaxHealth();
-        if (playerHealth / playerMaxHealth < 0.5f
-            || player.isCreative() || player.isInvulnerable()) {
+        if (player.getAbilities().instabuild) {
             return InteractionResult.PASS;
         }
         if (level.isClientSide()) {

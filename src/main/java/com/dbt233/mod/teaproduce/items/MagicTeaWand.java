@@ -57,13 +57,17 @@ public class MagicTeaWand extends Item {
             }
             double x = deathPos.pos().getX()+0.5d, y = deathPos.pos().getY(), z = deathPos.pos().getZ()+0.5d;
             player.teleportTo(x, y, z);
-            player.hurt(player.damageSources().fall(), 4.0f);
             player.sendSystemMessage(Component.translatable("chat.teaproduce.teleport_successfully",
                         Component.literal(String.valueOf(x)).withStyle(ChatFormatting.AQUA),
                         Component.literal(String.valueOf(y)).withStyle(ChatFormatting.AQUA),
                         Component.literal(String.valueOf(z)).withStyle(ChatFormatting.AQUA)
                 ));
-            player.getItemInHand(interactionHand).shrink(1);
+            if (!player.getAbilities().instabuild) {
+                player.hurt(player.damageSources().fall(), 4.0f);
+                player.getItemInHand(interactionHand).shrink(1);
+                player.resetFallDistance();
+            }
+            player.getCooldowns().addCooldown(this, 20);
 
         }
         return InteractionResultHolder.success(player.getItemInHand(interactionHand));
