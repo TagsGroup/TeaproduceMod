@@ -1,7 +1,5 @@
-package com.dbt233.mod.teaproduce.blocks.entity;
+package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
 
-import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
-import com.dbt233.mod.teaproduce.blocks.gui.MagicTeaBarrelMenu;
 import com.dbt233.mod.teaproduce.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;

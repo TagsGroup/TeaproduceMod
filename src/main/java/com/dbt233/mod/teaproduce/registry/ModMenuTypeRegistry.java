@@ -1,6 +1,6 @@
 package com.dbt233.mod.teaproduce.registry;
 
-import com.dbt233.mod.teaproduce.blocks.gui.MagicTeaBarrelMenu;
+import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel.MagicTeaBarrelMenu;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.registries.DeferredRegister;

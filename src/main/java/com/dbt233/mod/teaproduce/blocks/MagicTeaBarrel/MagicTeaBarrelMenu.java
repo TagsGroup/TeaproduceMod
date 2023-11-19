@@ -1,6 +1,5 @@
-package com.dbt233.mod.teaproduce.blocks.gui;
+package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
 
-import com.dbt233.mod.teaproduce.blocks.screen.MagicTeaBarrelScreen;
 import com.dbt233.mod.teaproduce.registry.ModMenuTypeRegistry;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;

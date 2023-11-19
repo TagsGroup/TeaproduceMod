@@ -1,6 +1,6 @@
 package com.dbt233.mod.teaproduce;
 
-import com.dbt233.mod.teaproduce.blocks.screen.MagicTeaBarrelScreen;
+import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel.MagicTeaBarrelScreen;
 import com.dbt233.mod.teaproduce.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;

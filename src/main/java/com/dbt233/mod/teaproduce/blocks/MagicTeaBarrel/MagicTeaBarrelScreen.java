@@ -1,6 +1,5 @@
-package com.dbt233.mod.teaproduce.blocks.screen;
+package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
 
-import com.dbt233.mod.teaproduce.blocks.gui.MagicTeaBarrelMenu;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

@@ -1,6 +1,6 @@
 package com.dbt233.mod.teaproduce.registry;
 
-import com.dbt233.mod.teaproduce.blocks.entity.MagicTeaBarrelBlockEntity;
+import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel.MagicTeaBarrelBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

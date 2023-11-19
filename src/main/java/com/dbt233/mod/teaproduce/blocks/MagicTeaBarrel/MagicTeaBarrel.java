@@ -1,6 +1,5 @@
-package com.dbt233.mod.teaproduce.blocks;
+package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
 
-import com.dbt233.mod.teaproduce.blocks.entity.MagicTeaBarrelBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
