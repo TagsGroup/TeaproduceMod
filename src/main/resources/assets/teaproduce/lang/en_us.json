@@ -10,5 +10,6 @@
   "enchantment.teaproduce.flying": "Flying",
   "enchantment.teaproduce.falling_thunder": "Falling Thunder",
   "chat.teaproduce.teleport_successfully": "Teleport to (%1$s, %2$s, %3$s) Succesfully!",
-  "chat.teaproduce.teleport_unsuccessfully": "Teleport Unsuccessfully Because You Never Died Before!"
+  "chat.teaproduce.teleport_unsuccessfully": "Teleport Unsuccessfully Because You Never Died Before!",
+  "chat.teaproduce.teleport_wrong_dimension": "You're not in %1$s right now."
 }

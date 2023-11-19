@@ -3,13 +3,11 @@ package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.monster.piglin.PiglinAi;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -23,7 +21,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MagicTeaBarrel extends BaseEntityBlock {
@@ -31,7 +28,7 @@ public class MagicTeaBarrel extends BaseEntityBlock {
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
     public MagicTeaBarrel(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.SOUTH).setValue(OPEN, Boolean.valueOf(false)));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.SOUTH).setValue(OPEN, false));
     }
 
     @Override
@@ -47,21 +44,16 @@ public class MagicTeaBarrel extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
+    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
         return new MagicTeaBarrelBlockEntity(blockPos, blockState);
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState blockState, @NotNull Level level, @NotNull BlockPos blockPos, @NotNull Player player, @NotNull InteractionHand interactionHand, @NotNull BlockHitResult blockHitResult) {
+    public InteractionResult 
+        use(BlockState blockState, Level level, BlockPos blockPos, Player player,
+            InteractionHand interactionHand, BlockHitResult blockHitResult) {
         if (level.isClientSide()) {
             return InteractionResult.SUCCESS;
-        } else {
-            BlockEntity blockEntity = level.getBlockEntity(blockPos);
-            if (blockEntity instanceof MagicTeaBarrelBlockEntity) {
-                player.openMenu((MagicTeaBarrelBlockEntity) blockEntity);
-                player.awardStat(Stats.OPEN_BARREL);
-                PiglinAi.angerNearbyPiglins(player, true);
-            }
         }
         return InteractionResult.CONSUME;
     }
@@ -85,6 +77,7 @@ public class MagicTeaBarrel extends BaseEntityBlock {
             ((MagicTeaBarrelBlockEntity) blockEntity).recheckOpen();
         }
     }
+
 
     @Override
     public RenderShape getRenderShape(BlockState blockState) {

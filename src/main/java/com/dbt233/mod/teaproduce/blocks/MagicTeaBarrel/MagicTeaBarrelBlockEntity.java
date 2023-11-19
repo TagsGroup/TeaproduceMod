@@ -25,7 +25,7 @@ public class MagicTeaBarrelBlockEntity extends RandomizableContainerBlockEntity 
 
     public static final int SIZE = 81;
 
-    private NonNullList<ItemStack>  items = NonNullList.withSize(SIZE, ItemStack.EMPTY);
+    private NonNullList<ItemStack> items = NonNullList.withSize(SIZE, ItemStack.EMPTY);
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
         @Override
         protected void onOpen(@NotNull Level level, @NotNull BlockPos blockPos, @NotNull BlockState blockState) {
@@ -131,4 +131,5 @@ public class MagicTeaBarrelBlockEntity extends RandomizableContainerBlockEntity 
         double d2 = (double)this.worldPosition.getZ() + 0.5D + (double)vec3i.getZ() / 2.0D;
         this.level.playSound(null, d0, d1, d2, event, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
     }
+
 }
