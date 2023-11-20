@@ -10,9 +10,10 @@ import org.slf4j.Logger;
 
 import java.util.Random;
 
+import static com.dbt233.mod.teaproduce.Utils.rand;
+
 public class GreenTeaLeaf extends Item {
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final Random random = new Random();
     public GreenTeaLeaf(Properties properties) {
         super(properties);
     }
@@ -21,8 +22,8 @@ public class GreenTeaLeaf extends Item {
     public ItemStack finishUsingItem(ItemStack itemStack, Level level, LivingEntity livingEntity) {
         if (livingEntity instanceof Player) {
             Player player = (Player) livingEntity;
-            int rand = Math.abs(random.nextInt()) % 10;
-            if (rand == 1) {
+            int randn = Math.abs(rand.nextInt()) % 10;
+            if (randn == 1) {
                 player.giveExperiencePoints(1);
             }
 

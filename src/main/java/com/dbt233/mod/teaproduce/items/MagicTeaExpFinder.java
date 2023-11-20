@@ -11,8 +11,9 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.Random;
 
+import static com.dbt233.mod.teaproduce.Utils.rand;
+
 public class MagicTeaExpFinder extends Item {
-    Random rand = new Random(System.currentTimeMillis());
     public MagicTeaExpFinder(Properties properties) {
         super(properties);
     }
@@ -25,7 +26,7 @@ public class MagicTeaExpFinder extends Item {
             if (player != null) {
                 player.getCooldowns().addCooldown(this, 20);
                 player.giveExperiencePoints(rand.nextInt(5, 20));
-                if (rand.nextInt(0, 2) == 0) {
+                if (rand.nextInt(0, 100) == 0) {
                     context.getItemInHand().shrink(1);
                     player.getInventory().add(new ItemStack(ItemRegistry.MAGIC_PURPLE_GEM.get()));
                 }

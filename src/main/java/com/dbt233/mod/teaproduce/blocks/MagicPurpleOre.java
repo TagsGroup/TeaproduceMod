@@ -15,12 +15,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
+import static com.dbt233.mod.teaproduce.Utils.rand;
+
 public class MagicPurpleOre extends Block {
 
     public MagicPurpleOre(Properties properties) {
         super(properties);
     }
-    Random rand = new Random(System.currentTimeMillis());
 
     @Override
     public @NotNull InteractionResult
