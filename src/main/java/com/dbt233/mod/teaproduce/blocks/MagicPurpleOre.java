@@ -5,6 +5,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -33,9 +34,11 @@ public class MagicPurpleOre extends Block {
         if (level.isClientSide()) {
             return InteractionResult.SUCCESS;
         }
-        player.giveExperiencePoints(20);
-        int saveHurtDuration = player.hurtDuration;
-        player.setHealth(playerHealth / 2);
+        player.giveExperiencePoints(rand.nextInt(5, 10));
+        if (rand.nextInt(0, 2) == 1) {
+            level.destroyBlock(blockPos, true, player);
+        }
+
         return InteractionResult.SUCCESS;
     }
 

@@ -1,6 +1,7 @@
 package com.dbt233.mod.teaproduce.registry;
 
 import com.dbt233.mod.teaproduce.items.GreenTeaLeaf;
+import com.dbt233.mod.teaproduce.items.MagicTeaExpFinder;
 import com.dbt233.mod.teaproduce.items.MagicTeaWand;
 import com.dbt233.mod.teaproduce.registry.property.FoodProperty;
 import com.dbt233.mod.teaproduce.registry.property.TierProperty;
@@ -47,7 +48,7 @@ public class ItemRegistry {
     }
 
     public static final RegistryObject<Item> GREEN_TEA_LEAF = registrySimpleItem("green_tea_leaf", () -> new GreenTeaLeaf(new Item.Properties().food(FoodProperty.GREEN_TEA_LEAF)));
-    public static final RegistryObject<Item> MAGIC_TEA_CHARGE = registrySimpleItem("magic_tea_charge", () -> new Item(new Item.Properties().stacksTo(16).rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> MAGIC_TEA_CHARGE = registrySimpleItem("magic_tea_charge", () -> new FireChargeItem(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> MAGIC_TEA_WAND = registryHandheldItem("magic_tea_wand", () -> new MagicTeaWand(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> BOXED_GREEN_TEA_LEAVES = registryBlockItem("boxed_green_tea_leaves", () -> new BlockItem(BlockRegistry.BOXED_GREEN_TEA_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_TEA_BARREL = registryBlockItem("magic_tea_barrel", () -> new BlockItem(BlockRegistry.MAGIC_TEA_BARREL.get(), new Item.Properties()));
@@ -62,5 +63,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MAGIC_PURPLE_SHOVEL = registryHandheldItem("magic_purple_shovel", () -> new ShovelItem(TierProperty.MAGIC_PURPLE, 1.5f, -3.0f, new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_PURPLE_HOE = registryHandheldItem("magic_purple_hoe", () -> new HoeItem(TierProperty.MAGIC_PURPLE, -2, -1f, new Item.Properties()));
     public static final RegistryObject<Item> MAGIC_PURPLE_PICKAXE = registryHandheldItem("magic_purple_pickaxe", () -> new PickaxeItem(TierProperty.MAGIC_PURPLE, 1, -2.8f, new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_TEA_EXP_FINDER = registryHandheldItem("magic_tea_exp_finder", () -> new MagicTeaExpFinder(new Item.Properties()));
+    public static final RegistryObject<Item> MAGIC_PURPLE_GEM = registrySimpleItem("magic_purple_gem", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
 }
