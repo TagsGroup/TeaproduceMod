@@ -1,4 +1,4 @@
-package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
+package com.dbt233.mod.teaproduce.blocks.block_entities.magic_tea_barrel;
 
 import com.dbt233.mod.teaproduce.registry.ModMenuTypeRegistry;
 import net.minecraft.world.Container;

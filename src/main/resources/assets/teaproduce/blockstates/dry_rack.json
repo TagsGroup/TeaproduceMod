@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "teaproduce:block/dry_rack"
+    },
+    "facing=east": {
+      "model": "teaproduce:block/dry_rack",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "teaproduce:block/dry_rack",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "teaproduce:block/dry_rack",
+      "y": 270
+    }
+  }
+}

@@ -1,10 +1,12 @@
 package com.dbt233.mod.teaproduce;
 
-import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel.MagicTeaBarrelScreen;
+import com.dbt233.mod.teaproduce.blocks.block_entities.dry_rack.DryRackBlockEntityRenderer;
+import com.dbt233.mod.teaproduce.blocks.block_entities.magic_tea_barrel.MagicTeaBarrelScreen;
 import com.dbt233.mod.teaproduce.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -52,10 +54,15 @@ public class TeaProduce
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientEvent {
+    public static class ClientEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypeRegistry.MAGIC_TEA_BARREL.get(), MagicTeaBarrelScreen::new);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(BlockEntityRegistry.DRY_RACK_BLOCK_ENTITY.get(), DryRackBlockEntityRenderer::new);
         }
     }
 }

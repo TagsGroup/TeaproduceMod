@@ -1,4 +1,4 @@
-package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
+package com.dbt233.mod.teaproduce.blocks.block_entities.magic_tea_barrel;
 
 import com.dbt233.mod.teaproduce.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
@@ -92,11 +92,11 @@ public class MagicTeaBarrelBlockEntity extends RandomizableContainerBlockEntity 
     }
 
     @Override
-    public void load(@NotNull CompoundTag compoundTag) {
-        super.load(compoundTag);
+    public void load(@NotNull CompoundTag nbt) {
+        super.load(nbt);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        if (!this.tryLoadLootTable(compoundTag)) {
-            ContainerHelper.loadAllItems(compoundTag, this.items);
+        if (!this.tryLoadLootTable(nbt)) {
+            ContainerHelper.loadAllItems(nbt, this.items);
         }
     }
 

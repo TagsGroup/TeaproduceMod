@@ -1,4 +1,4 @@
-package com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel;
+package com.dbt233.mod.teaproduce.blocks.block_entities.magic_tea_barrel;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

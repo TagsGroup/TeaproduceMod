@@ -1,7 +1,8 @@
 package com.dbt233.mod.teaproduce.registry;
 
 import com.dbt233.mod.teaproduce.blocks.MagicPurpleOre;
-import com.dbt233.mod.teaproduce.blocks.MagicTeaBarrel.MagicTeaBarrel;
+import com.dbt233.mod.teaproduce.blocks.block_entities.dry_rack.DryRack;
+import com.dbt233.mod.teaproduce.blocks.block_entities.magic_tea_barrel.MagicTeaBarrel;
 import com.google.common.collect.Sets;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -33,5 +34,6 @@ public class BlockRegistry {
     public static final RegistryObject<Block> MAGIC_PURPLE_ORE = registrySimpleBlock("magic_purple_ore", () -> new MagicPurpleOre(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> DEEPSLATE_MAGIC_PURPLE_ORE = registrySimpleBlock("deepslate_magic_purple_ore", () -> new MagicPurpleOre(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MAGIC_PURPLE_BLOCK = registrySimpleBlock("magic_purple_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> DRY_RACK = registryBlock("dry_rack", () -> new DryRack(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
 
 }
