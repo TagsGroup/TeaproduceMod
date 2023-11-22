@@ -3,6 +3,9 @@ package com.dbt233.mod.teaproduce.blocks.block_entities.dry_rack;
 import com.dbt233.mod.teaproduce.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -21,13 +24,30 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
+
 public class DryRack extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final VoxelShape SHAPE = Block.box(0.0d, 0.0d, 0.0d, 16.0d, 10.0d, 16.0d);
+    public static VoxelShape SHAPE = box(0d,7d,0d,16d,9d,16d);
+    static {
+        VoxelShape[] shapes = {
+                box(0d,0d,0d,2d,7d,2d),
+                box(14d,0d,0d,16d,7d,2d),
+                box(14d,0d,14d,16d,7d,16d),
+                box(0d,0d,14d,2d,7d,16d),
+                box(0d,9d,0d, 16d,10d,1d),
+                box(15d,9d,1d,16d,10d,15d),
+                box(0d,9d,15d,16d,10d,16d),
+                box(0d,9d,1d,1d,10d,15d)};
+        for (VoxelShape voxelShape : shapes) {
+            SHAPE = Shapes.or(SHAPE, voxelShape);
+        }
+    }
     public DryRack(Properties properties) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
@@ -88,6 +108,7 @@ public class DryRack extends BaseEntityBlock {
                 ItemStackHandler inventory = ((DryRackBlockEntity) blockEntity).getInventory();
                 for (int slot = 0; slot < inventory.getSlots(); slot++) {
                     level.addFreshEntity(new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), inventory.getStackInSlot(slot)));
+//                    level.playSound(null, blockPos, SoundEvents.ANVIL_PLACE, SoundSource.BLOCKS);
                 }
             }
             level.updateNeighbourForOutputSignal(blockPos, this);
