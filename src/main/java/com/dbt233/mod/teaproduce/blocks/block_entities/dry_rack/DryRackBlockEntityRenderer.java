@@ -30,7 +30,7 @@ public class DryRackBlockEntityRenderer implements BlockEntityRenderer<DryRackBl
             ItemStack itemStack = inventory.getStackInSlot(slot);
             if (!itemStack.isEmpty()) {
                 poseStack.pushPose();
-                poseStack.translate(0.5d, 10d/16d, 0.5d);
+                poseStack.translate(0.5d, 9d/16d, 0.5d);
                 float yRot = -direction.toYRot();
                 poseStack.mulPose(Axis.YP.rotationDegrees(yRot));
                 poseStack.mulPose(Axis.XP.rotationDegrees(90.0f));

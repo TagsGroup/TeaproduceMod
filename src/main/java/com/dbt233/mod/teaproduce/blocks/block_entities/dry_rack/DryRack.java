@@ -69,7 +69,7 @@ public class DryRack extends BaseEntityBlock {
                                  InteractionHand interactionHand, BlockHitResult blockHitResult) {
         BlockEntity blockEntity = level.getBlockEntity(blockPos);
         if (blockEntity instanceof DryRackBlockEntity dryRackBlockEntity) {
-            if (!level.isClientSide && dryRackBlockEntity.addItem(player.getMainHandItem())) {
+            if (!level.isClientSide && dryRackBlockEntity.changeItem(player, player.getMainHandItem())) {
                 return InteractionResult.SUCCESS;
             }
         }
