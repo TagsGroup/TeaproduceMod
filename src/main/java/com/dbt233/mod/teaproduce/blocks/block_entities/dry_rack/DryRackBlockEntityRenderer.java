@@ -8,13 +8,11 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec2;
-import net.minecraftforge.items.ItemStackHandler;
 
 public class DryRackBlockEntityRenderer implements BlockEntityRenderer<DryRackBlockEntity> {
     public DryRackBlockEntityRenderer(BlockEntityRendererProvider.Context context) {
@@ -23,11 +21,11 @@ public class DryRackBlockEntityRenderer implements BlockEntityRenderer<DryRackBl
     @Override
     public void render(DryRackBlockEntity dryRack, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int combinedLight, int combinedOverLay) {
         Direction direction = dryRack.getBlockState().getValue(BlockStateProperties.HORIZONTAL_FACING).getOpposite();
-        ItemStackHandler inventory = dryRack.getInventory();
+        NonNullList<ItemStack> items = dryRack.getItems();
         int posLong = (int) dryRack.getBlockPos().asLong();
 
-        for (int slot = 0; slot < inventory.getSlots(); slot++) {
-            ItemStack itemStack = inventory.getStackInSlot(slot);
+        for (int slot = 0; slot < items.size(); slot++) {
+            ItemStack itemStack = items.get(slot);
             if (!itemStack.isEmpty()) {
                 poseStack.pushPose();
                 poseStack.translate(0.5d, 9d/16d, 0.5d);

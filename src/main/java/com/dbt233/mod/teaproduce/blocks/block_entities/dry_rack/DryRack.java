@@ -1,21 +1,17 @@
 package com.dbt233.mod.teaproduce.blocks.block_entities.dry_rack;
 
-import com.dbt233.mod.teaproduce.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Container;
-import net.minecraft.world.Containers;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.crafting.CampfireCookingRecipe;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,10 +22,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
+import java.util.Optional;
 
 public class DryRack extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -69,8 +64,12 @@ public class DryRack extends BaseEntityBlock {
                                  InteractionHand interactionHand, BlockHitResult blockHitResult) {
         BlockEntity blockEntity = level.getBlockEntity(blockPos);
         if (blockEntity instanceof DryRackBlockEntity dryRackBlockEntity) {
-            if (!level.isClientSide && dryRackBlockEntity.changeItem(player, player.getMainHandItem())) {
-                return InteractionResult.SUCCESS;
+            ItemStack itemStack = player.getMainHandItem();
+            Optional<CampfireCookingRecipe> recipe = dryRackBlockEntity.getDryableRecipe(itemStack);
+            if (recipe.isPresent()) {
+                if (!level.isClientSide && dryRackBlockEntity.changeItem(player, itemStack, recipe.get())) {
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
         return InteractionResult.CONSUME;
@@ -105,9 +104,9 @@ public class DryRack extends BaseEntityBlock {
         if (!blockState.is(blockState2.getBlock())) {
             BlockEntity blockEntity = level.getBlockEntity(blockPos);
             if (blockEntity instanceof DryRackBlockEntity) {
-                ItemStackHandler inventory = ((DryRackBlockEntity) blockEntity).getInventory();
-                for (int slot = 0; slot < inventory.getSlots(); slot++) {
-                    level.addFreshEntity(new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), inventory.getStackInSlot(slot)));
+                NonNullList<ItemStack> items = ((DryRackBlockEntity) blockEntity).getItems();
+                for (int slot = 0; slot < items.size(); slot++) {
+                    level.addFreshEntity(new ItemEntity(level, blockPos.getX(), blockPos.getY(), blockPos.getZ(), items.get(slot)));
 //                    level.playSound(null, blockPos, SoundEvents.ANVIL_PLACE, SoundSource.BLOCKS);
                 }
             }
