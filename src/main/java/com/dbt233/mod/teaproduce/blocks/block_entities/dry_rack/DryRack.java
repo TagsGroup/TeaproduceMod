@@ -1,8 +1,12 @@
 package com.dbt233.mod.teaproduce.blocks.block_entities.dry_rack;
 
+import com.dbt233.mod.teaproduce.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -14,6 +18,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -43,9 +49,23 @@ public class DryRack extends BaseEntityBlock {
             SHAPE = Shapes.or(SHAPE, voxelShape);
         }
     }
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_152755_, BlockState p_152756_, BlockEntityType<T> p_152757_) {
+        if (p_152755_.isClientSide) {
+            return createTickerHelper(p_152757_, BlockEntityRegistry.DRY_RACK_BLOCK_ENTITY.get(), DryRackBlockEntity::particleTick);
+        } else {
+            return createTickerHelper(p_152757_, BlockEntityRegistry.DRY_RACK_BLOCK_ENTITY.get(), DryRackBlockEntity::dryTick);
+        }
+    }
     public DryRack(Properties properties) {
         super(properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(FACING, Direction.NORTH));
+    }
+
+    public static void makeParticles(Level level, BlockPos pos) {
+        RandomSource randomsource = level.getRandom();
+        SimpleParticleType simpleparticletype = ParticleTypes.ASH;
+        level.addAlwaysVisibleParticle(simpleparticletype, true, (double)pos.getX() + 0.5D + randomsource.nextDouble() / 3.0D * (double)(randomsource.nextBoolean() ? 1 : -1), (double)pos.getY() + randomsource.nextDouble() + randomsource.nextDouble(), (double)pos.getZ() + 0.5D + randomsource.nextDouble() / 3.0D * (double)(randomsource.nextBoolean() ? 1 : -1), 0.0D, 0.07D, 0.0D);
     }
 
     @Nullable
